@@ -34,11 +34,11 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :details)
+    params.require(:task).permit(:title, :details, :completed)
   end
 
   def set_task
-    @restaurant = Restaurant.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
 end
